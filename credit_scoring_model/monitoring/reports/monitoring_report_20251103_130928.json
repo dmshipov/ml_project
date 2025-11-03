@@ -1,0 +1,176 @@
+{
+  "timestamp": "2025-11-03T13:09:28.126283",
+  "model_path": "models/trained/best_model.pkl",
+  "reference_data_path": "data/processed/X_train.csv",
+  "alerts": [
+    {
+      "type": "performance_degradation",
+      "severity": "high",
+      "message": "Обнаружена деградация производительности",
+      "details": "Перевышение порога для: f1_score, accuracy, precision, recall"
+    }
+  ],
+  "data_drift": {
+    "overall_drift_detected": "False",
+    "feature_drifts": {
+      "id": {
+        "drift_detected": "False",
+        "statistic": 0.025833333333333333,
+        "p_value": 0.15254503511849554,
+        "reference_mean_or_counts": 15018.5390625,
+        "current_mean_or_counts": 14719.044583333334
+      },
+      "limit_bal": {
+        "drift_detected": "False",
+        "statistic": 0.0109375,
+        "p_value": 0.974574292060219,
+        "reference_mean_or_counts": 167060.175,
+        "current_mean_or_counts": 167791.66666666666
+      },
+      "sex": {
+        "drift_detected": "False",
+        "statistic": 0.009479166666666667,
+        "p_value": 0.9949244220982231,
+        "reference_mean_or_counts": 1.6013541666666666,
+        "current_mean_or_counts": 1.6108333333333333
+      },
+      "education": {
+        "drift_detected": "False",
+        "statistic": 0.007395833333333333,
+        "p_value": 0.999928875138074,
+        "reference_mean_or_counts": 1.8632291666666667,
+        "current_mean_or_counts": 1.8533333333333333
+      },
+      "marriage": {
+        "drift_detected": "False",
+        "statistic": 0.013333333333333334,
+        "p_value": 0.8816780943397307,
+        "reference_mean_or_counts": 1.5551041666666667,
+        "current_mean_or_counts": 1.5441666666666667
+      },
+      "age": {
+        "drift_detected": "False",
+        "statistic": 0.023020833333333334,
+        "p_value": 0.25840724265584486,
+        "reference_mean_or_counts": 35.38708333333334,
+        "current_mean_or_counts": 35.81333333333333
+      },
+      "pay_0": {
+        "drift_detected": "False",
+        "statistic": 0.0065625,
+        "p_value": 0.9999964152751296,
+        "reference_mean_or_counts": -0.012291666666666666,
+        "current_mean_or_counts": -0.02625
+      },
+      "pay_2": {
+        "drift_detected": "False",
+        "statistic": 0.014270833333333333,
+        "p_value": 0.8258408786667598,
+        "reference_mean_or_counts": -0.12614583333333335,
+        "current_mean_or_counts": -0.16583333333333333
+      },
+      "pay_3": {
+        "drift_detected": "False",
+        "statistic": 0.0075,
+        "p_value": 0.9999036262341088,
+        "reference_mean_or_counts": -0.15552083333333333,
+        "current_mean_or_counts": -0.17833333333333334
+      },
+      "pay_4": {
+        "drift_detected": "False",
+        "statistic": 0.015104166666666667,
+        "p_value": 0.769909605809826,
+        "reference_mean_or_counts": -0.21166666666666667,
+        "current_mean_or_counts": -0.25083333333333335
+      },
+      "pay_5": {
+        "drift_detected": "False",
+        "statistic": 0.008229166666666666,
+        "p_value": 0.9994132740953482,
+        "reference_mean_or_counts": -0.255,
+        "current_mean_or_counts": -0.2775
+      },
+      "pay_6": {
+        "drift_detected": "False",
+        "statistic": 0.005,
+        "p_value": 0.9999999998718974,
+        "reference_mean_or_counts": -0.28822916666666665,
+        "current_mean_or_counts": -0.28708333333333336
+      },
+      "bill_amt1": {
+        "drift_detected": "False",
+        "statistic": 0.016770833333333332,
+        "p_value": 0.6489046149542802,
+        "reference_mean_or_counts": 50923.574375,
+        "current_mean_or_counts": 51953.14375
+      },
+      "pay_amt1": {
+        "drift_detected": "False",
+        "statistic": 0.023020833333333334,
+        "p_value": 0.25840724265584486,
+        "reference_mean_or_counts": 5749.390416666667,
+        "current_mean_or_counts": 5386.440416666666
+      },
+      "pay_amt2": {
+        "drift_detected": "False",
+        "statistic": 0.015208333333333334,
+        "p_value": 0.7626135080629854,
+        "reference_mean_or_counts": 5730.483125,
+        "current_mean_or_counts": 5745.9158333333335
+      },
+      "pay_amt3": {
+        "drift_detected": "False",
+        "statistic": 0.0146875,
+        "p_value": 0.7984728329216046,
+        "reference_mean_or_counts": 5387.105729166667,
+        "current_mean_or_counts": 5036.854166666667
+      },
+      "pay_amt4": {
+        "drift_detected": "False",
+        "statistic": 0.011666666666666667,
+        "p_value": 0.9546994037185229,
+        "reference_mean_or_counts": 4719.4803125,
+        "current_mean_or_counts": 4576.900416666666
+      },
+      "pay_amt5": {
+        "drift_detected": "False",
+        "statistic": 0.01875,
+        "p_value": 0.5058972648027833,
+        "reference_mean_or_counts": 4719.1740625,
+        "current_mean_or_counts": 4651.329583333333
+      },
+      "pay_amt6": {
+        "drift_detected": "False",
+        "statistic": 0.017916666666666668,
+        "p_value": 0.5649116590643742,
+        "reference_mean_or_counts": 5219.165104166666,
+        "current_mean_or_counts": 5201.14
+      }
+    },
+    "drift_score": 0.013930921052631577,
+    "timestamp": "2025-11-03T13:09:28.126283"
+  },
+  "performance": {
+    "current_metrics": {
+      "accuracy": 0.7904166666666667,
+      "precision": 0.5264227642276422,
+      "recall": 0.4896030245746692,
+      "f1_score": 0.5073457394711067,
+      "roc_auc": 0.7620299487046847
+    },
+    "performance_degraded": true,
+    "degradation_details": {
+      "f1_score": 0.36581782566111665,
+      "accuracy": 0.07009803921568626,
+      "precision": 0.3419715447154473,
+      "recall": 0.38799621928166356
+    },
+    "timestamp": "2025-11-03T13:09:28.242488"
+  },
+  "bias": {
+    "bias_detected": false,
+    "attribute_bias": {},
+    "timestamp": "2025-11-03T13:09:28.282554"
+  },
+  "overall_status": "issues_detected"
+}

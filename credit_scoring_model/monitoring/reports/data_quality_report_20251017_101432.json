@@ -1,0 +1,2556 @@
+{
+  "timestamp": "2025-10-17T10:14:31.222309",
+  "data_shape": [
+    36170,
+    104
+  ],
+  "data_types": {
+    "loan_amnt": "float64",
+    "funded_amnt": "float64",
+    "funded_amnt_inv": "float64",
+    "term": "object",
+    "int_rate": "float64",
+    "installment": "float64",
+    "grade": "object",
+    "sub_grade": "object",
+    "emp_title": "object",
+    "emp_length": "object",
+    "home_ownership": "object",
+    "annual_inc": "float64",
+    "verification_status": "object",
+    "pymnt_plan": "object",
+    "purpose": "object",
+    "title": "object",
+    "zip_code": "object",
+    "addr_state": "object",
+    "dti": "float64",
+    "delinq_2yrs": "float64",
+    "earliest_cr_line": "object",
+    "fico_range_low": "float64",
+    "fico_range_high": "float64",
+    "inq_last_6mths": "float64",
+    "mths_since_last_delinq": "float64",
+    "open_acc": "float64",
+    "pub_rec": "float64",
+    "revol_bal": "float64",
+    "revol_util": "float64",
+    "total_acc": "float64",
+    "initial_list_status": "object",
+    "out_prncp": "float64",
+    "out_prncp_inv": "float64",
+    "total_pymnt": "float64",
+    "total_pymnt_inv": "float64",
+    "total_rec_prncp": "float64",
+    "total_rec_int": "float64",
+    "total_rec_late_fee": "float64",
+    "recoveries": "float64",
+    "collection_recovery_fee": "float64",
+    "last_pymnt_d": "object",
+    "last_pymnt_amnt": "float64",
+    "next_pymnt_d": "object",
+    "last_credit_pull_d": "object",
+    "last_fico_range_high": "float64",
+    "last_fico_range_low": "float64",
+    "collections_12_mths_ex_med": "float64",
+    "application_type": "object",
+    "acc_now_delinq": "float64",
+    "tot_coll_amt": "float64",
+    "tot_cur_bal": "float64",
+    "open_acc_6m": "float64",
+    "open_act_il": "float64",
+    "open_il_12m": "float64",
+    "open_il_24m": "float64",
+    "mths_since_rcnt_il": "float64",
+    "total_bal_il": "float64",
+    "il_util": "float64",
+    "open_rv_12m": "float64",
+    "open_rv_24m": "float64",
+    "max_bal_bc": "float64",
+    "all_util": "float64",
+    "total_rev_hi_lim": "float64",
+    "inq_fi": "float64",
+    "total_cu_tl": "float64",
+    "inq_last_12m": "float64",
+    "acc_open_past_24mths": "float64",
+    "avg_cur_bal": "float64",
+    "bc_open_to_buy": "float64",
+    "bc_util": "float64",
+    "chargeoff_within_12_mths": "float64",
+    "delinq_amnt": "float64",
+    "mo_sin_old_il_acct": "float64",
+    "mo_sin_old_rev_tl_op": "float64",
+    "mo_sin_rcnt_rev_tl_op": "float64",
+    "mo_sin_rcnt_tl": "float64",
+    "mort_acc": "float64",
+    "mths_since_recent_bc": "float64",
+    "mths_since_recent_inq": "float64",
+    "num_accts_ever_120_pd": "float64",
+    "num_actv_bc_tl": "float64",
+    "num_actv_rev_tl": "float64",
+    "num_bc_sats": "float64",
+    "num_bc_tl": "float64",
+    "num_il_tl": "float64",
+    "num_op_rev_tl": "float64",
+    "num_rev_accts": "float64",
+    "num_rev_tl_bal_gt_0": "float64",
+    "num_sats": "float64",
+    "num_tl_120dpd_2m": "float64",
+    "num_tl_30dpd": "float64",
+    "num_tl_90g_dpd_24m": "float64",
+    "num_tl_op_past_12m": "float64",
+    "pct_tl_nvr_dlq": "float64",
+    "percent_bc_gt_75": "float64",
+    "pub_rec_bankruptcies": "float64",
+    "tax_liens": "float64",
+    "tot_hi_cred_lim": "float64",
+    "total_bal_ex_mort": "float64",
+    "total_bc_limit": "float64",
+    "total_il_high_credit_limit": "float64",
+    "hardship_flag": "object",
+    "disbursement_method": "object",
+    "debt_settlement_flag": "object"
+  },
+  "overall_quality_score": 100.0,
+  "issues": [],
+  "recommendations": [
+    "Рассмотрите удаление высоко коррелированных колонок"
+  ],
+  "missing_values": {
+    "total_missing": "0",
+    "missing_percentage": 0.0,
+    "columns_with_missing": {
+      "loan_amnt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "funded_amnt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "funded_amnt_inv": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "term": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "int_rate": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "installment": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "grade": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "sub_grade": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "emp_title": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "emp_length": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "home_ownership": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "annual_inc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "verification_status": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "pymnt_plan": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "purpose": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "title": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "zip_code": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "addr_state": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "dti": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "delinq_2yrs": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "earliest_cr_line": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "fico_range_low": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "fico_range_high": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "inq_last_6mths": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mths_since_last_delinq": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_acc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "pub_rec": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "revol_bal": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "revol_util": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_acc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "initial_list_status": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "out_prncp": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "out_prncp_inv": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_pymnt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_pymnt_inv": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_rec_prncp": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_rec_int": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_rec_late_fee": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "recoveries": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "collection_recovery_fee": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "last_pymnt_d": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "last_pymnt_amnt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "next_pymnt_d": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "last_credit_pull_d": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "last_fico_range_high": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "last_fico_range_low": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "collections_12_mths_ex_med": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "application_type": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "acc_now_delinq": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "tot_coll_amt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "tot_cur_bal": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_acc_6m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_act_il": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_il_12m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_il_24m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mths_since_rcnt_il": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_bal_il": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "il_util": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_rv_12m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "open_rv_24m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "max_bal_bc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "all_util": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_rev_hi_lim": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "inq_fi": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_cu_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "inq_last_12m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "acc_open_past_24mths": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "avg_cur_bal": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "bc_open_to_buy": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "bc_util": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "chargeoff_within_12_mths": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "delinq_amnt": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mo_sin_old_il_acct": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mo_sin_old_rev_tl_op": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mo_sin_rcnt_rev_tl_op": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mo_sin_rcnt_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mort_acc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mths_since_recent_bc": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "mths_since_recent_inq": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_accts_ever_120_pd": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_actv_bc_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_actv_rev_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_bc_sats": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_bc_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_il_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_op_rev_tl": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_rev_accts": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_rev_tl_bal_gt_0": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_sats": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_tl_120dpd_2m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_tl_30dpd": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_tl_90g_dpd_24m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "num_tl_op_past_12m": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "pct_tl_nvr_dlq": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "percent_bc_gt_75": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "pub_rec_bankruptcies": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "tax_liens": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "tot_hi_cred_lim": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_bal_ex_mort": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_bc_limit": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "total_il_high_credit_limit": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "hardship_flag": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "disbursement_method": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "debt_settlement_flag": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "critical_columns": [],
+    "timestamp": "2025-10-17T10:14:31.258326"
+  },
+  "outliers": {
+    "columns_with_outliers": {
+      "loan_amnt": {
+        "count": 0,
+        "percentage": 0.0,
+        "mean_z_score": 0.81,
+        "max_z_score": 2.73
+      },
+      "funded_amnt": {
+        "count": 0,
+        "percentage": 0.0,
+        "mean_z_score": 0.81,
+        "max_z_score": 2.73
+      },
+      "funded_amnt_inv": {
+        "count": 0,
+        "percentage": 0.0,
+        "mean_z_score": 0.81,
+        "max_z_score": 2.73
+      },
+      "int_rate": {
+        "count": 263,
+        "percentage": 0.73,
+        "mean_z_score": 0.79,
+        "max_z_score": 3.72
+      },
+      "installment": {
+        "count": 337,
+        "percentage": 0.93,
+        "mean_z_score": 0.79,
+        "max_z_score": 4.17
+      },
+      "annual_inc": {
+        "count": 305,
+        "percentage": 0.84,
+        "mean_z_score": 0.47,
+        "max_z_score": 88.29
+      },
+      "dti": {
+        "count": 116,
+        "percentage": 0.32,
+        "mean_z_score": 0.53,
+        "max_z_score": 68.73
+      },
+      "delinq_2yrs": {
+        "count": 939,
+        "percentage": 2.6,
+        "mean_z_score": 0.58,
+        "max_z_score": 21.73
+      },
+      "fico_range_low": {
+        "count": 527,
+        "percentage": 1.46,
+        "mean_z_score": 0.78,
+        "max_z_score": 4.41
+      },
+      "fico_range_high": {
+        "count": 527,
+        "percentage": 1.46,
+        "mean_z_score": 0.78,
+        "max_z_score": 4.44
+      },
+      "inq_last_6mths": {
+        "count": 416,
+        "percentage": 1.15,
+        "mean_z_score": 0.79,
+        "max_z_score": 30.46
+      },
+      "mths_since_last_delinq": {
+        "count": 296,
+        "percentage": 0.82,
+        "mean_z_score": 0.62,
+        "max_z_score": 7.58
+      },
+      "open_acc": {
+        "count": 443,
+        "percentage": 1.22,
+        "mean_z_score": 0.76,
+        "max_z_score": 9.17
+      },
+      "pub_rec": {
+        "count": 869,
+        "percentage": 2.4,
+        "mean_z_score": 0.6,
+        "max_z_score": 35.37
+      },
+      "revol_bal": {
+        "count": 434,
+        "percentage": 1.2,
+        "mean_z_score": 0.48,
+        "max_z_score": 58.48
+      },
+      "revol_util": {
+        "count": 1,
+        "percentage": 0.0,
+        "mean_z_score": 0.83,
+        "max_z_score": 3.17
+      },
+      "total_acc": {
+        "count": 347,
+        "percentage": 0.96,
+        "mean_z_score": 0.78,
+        "max_z_score": 8.03
+      },
+      "out_prncp": {
+        "count": 927,
+        "percentage": 2.56,
+        "mean_z_score": 0.74,
+        "max_z_score": 4.77
+      },
+      "out_prncp_inv": {
+        "count": 929,
+        "percentage": 2.57,
+        "mean_z_score": 0.74,
+        "max_z_score": 4.77
+      },
+      "total_pymnt": {
+        "count": 444,
+        "percentage": 1.23,
+        "mean_z_score": 0.78,
+        "max_z_score": 4.84
+      },
+      "total_pymnt_inv": {
+        "count": 444,
+        "percentage": 1.23,
+        "mean_z_score": 0.78,
+        "max_z_score": 4.85
+      },
+      "total_rec_prncp": {
+        "count": 735,
+        "percentage": 2.03,
+        "mean_z_score": 0.79,
+        "max_z_score": 3.69
+      },
+      "total_rec_int": {
+        "count": 772,
+        "percentage": 2.13,
+        "mean_z_score": 0.69,
+        "max_z_score": 8.43
+      },
+      "total_rec_late_fee": {
+        "count": 436,
+        "percentage": 1.21,
+        "mean_z_score": 0.25,
+        "max_z_score": 49.87
+      },
+      "recoveries": {
+        "count": 652,
+        "percentage": 1.8,
+        "mean_z_score": 0.34,
+        "max_z_score": 45.0
+      },
+      "collection_recovery_fee": {
+        "count": 594,
+        "percentage": 1.64,
+        "mean_z_score": 0.32,
+        "max_z_score": 45.94
+      },
+      "last_pymnt_amnt": {
+        "count": 951,
+        "percentage": 2.63,
+        "mean_z_score": 0.69,
+        "max_z_score": 6.24
+      },
+      "last_fico_range_high": {
+        "count": 3,
+        "percentage": 0.01,
+        "mean_z_score": 0.77,
+        "max_z_score": 9.35
+      },
+      "last_fico_range_low": {
+        "count": 610,
+        "percentage": 1.69,
+        "mean_z_score": 0.59,
+        "max_z_score": 6.02
+      },
+      "collections_12_mths_ex_med": {
+        "count": 584,
+        "percentage": 1.61,
+        "mean_z_score": 0.23,
+        "max_z_score": 57.74
+      },
+      "acc_now_delinq": {
+        "count": 137,
+        "percentage": 0.38,
+        "mean_z_score": 0.12,
+        "max_z_score": 30.55
+      },
+      "tot_coll_amt": {
+        "count": 285,
+        "percentage": 0.79,
+        "mean_z_score": 0.21,
+        "max_z_score": 77.88
+      },
+      "tot_cur_bal": {
+        "count": 550,
+        "percentage": 1.52,
+        "mean_z_score": 0.74,
+        "max_z_score": 14.39
+      },
+      "open_acc_6m": {
+        "count": 781,
+        "percentage": 2.16,
+        "mean_z_score": 0.59,
+        "max_z_score": 12.18
+      },
+      "open_act_il": {
+        "count": 886,
+        "percentage": 2.45,
+        "mean_z_score": 0.56,
+        "max_z_score": 16.08
+      },
+      "open_il_12m": {
+        "count": 1039,
+        "percentage": 2.87,
+        "mean_z_score": 0.75,
+        "max_z_score": 14.52
+      },
+      "open_il_24m": {
+        "count": 567,
+        "percentage": 1.57,
+        "mean_z_score": 0.67,
+        "max_z_score": 19.5
+      },
+      "mths_since_rcnt_il": {
+        "count": 943,
+        "percentage": 2.61,
+        "mean_z_score": 0.53,
+        "max_z_score": 21.99
+      },
+      "total_bal_il": {
+        "count": 707,
+        "percentage": 1.95,
+        "mean_z_score": 0.55,
+        "max_z_score": 25.16
+      },
+      "il_util": {
+        "count": 781,
+        "percentage": 2.16,
+        "mean_z_score": 0.61,
+        "max_z_score": 11.82
+      },
+      "open_rv_12m": {
+        "count": 856,
+        "percentage": 2.37,
+        "mean_z_score": 0.62,
+        "max_z_score": 13.99
+      },
+      "open_rv_24m": {
+        "count": 772,
+        "percentage": 2.13,
+        "mean_z_score": 0.65,
+        "max_z_score": 13.86
+      },
+      "max_bal_bc": {
+        "count": 139,
+        "percentage": 0.38,
+        "mean_z_score": 0.35,
+        "max_z_score": 154.31
+      },
+      "all_util": {
+        "count": 368,
+        "percentage": 1.02,
+        "mean_z_score": 0.65,
+        "max_z_score": 7.47
+      },
+      "total_rev_hi_lim": {
+        "count": 519,
+        "percentage": 1.43,
+        "mean_z_score": 0.58,
+        "max_z_score": 50.09
+      },
+      "inq_fi": {
+        "count": 770,
+        "percentage": 2.13,
+        "mean_z_score": 0.54,
+        "max_z_score": 17.39
+      },
+      "total_cu_tl": {
+        "count": 970,
+        "percentage": 2.68,
+        "mean_z_score": 0.58,
+        "max_z_score": 28.71
+      },
+      "inq_last_12m": {
+        "count": 734,
+        "percentage": 2.03,
+        "mean_z_score": 0.65,
+        "max_z_score": 14.69
+      },
+      "acc_open_past_24mths": {
+        "count": 508,
+        "percentage": 1.4,
+        "mean_z_score": 0.76,
+        "max_z_score": 9.46
+      },
+      "avg_cur_bal": {
+        "count": 613,
+        "percentage": 1.69,
+        "mean_z_score": 0.68,
+        "max_z_score": 23.93
+      },
+      "bc_open_to_buy": {
+        "count": 775,
+        "percentage": 2.14,
+        "mean_z_score": 0.64,
+        "max_z_score": 20.44
+      },
+      "bc_util": {
+        "count": 2,
+        "percentage": 0.01,
+        "mean_z_score": 0.84,
+        "max_z_score": 3.37
+      },
+      "chargeoff_within_12_mths": {
+        "count": 277,
+        "percentage": 0.77,
+        "mean_z_score": 0.17,
+        "max_z_score": 49.39
+      },
+      "delinq_amnt": {
+        "count": 26,
+        "percentage": 0.07,
+        "mean_z_score": 0.04,
+        "max_z_score": 94.72
+      },
+      "mo_sin_old_il_acct": {
+        "count": 277,
+        "percentage": 0.77,
+        "mean_z_score": 0.72,
+        "max_z_score": 13.43
+      },
+      "mo_sin_old_rev_tl_op": {
+        "count": 413,
+        "percentage": 1.14,
+        "mean_z_score": 0.77,
+        "max_z_score": 6.17
+      },
+      "mo_sin_rcnt_rev_tl_op": {
+        "count": 764,
+        "percentage": 2.11,
+        "mean_z_score": 0.62,
+        "max_z_score": 18.34
+      },
+      "mo_sin_rcnt_tl": {
+        "count": 613,
+        "percentage": 1.69,
+        "mean_z_score": 0.63,
+        "max_z_score": 20.57
+      },
+      "mort_acc": {
+        "count": 356,
+        "percentage": 0.98,
+        "mean_z_score": 0.78,
+        "max_z_score": 25.79
+      },
+      "mths_since_recent_bc": {
+        "count": 811,
+        "percentage": 2.24,
+        "mean_z_score": 0.64,
+        "max_z_score": 16.83
+      },
+      "mths_since_recent_inq": {
+        "count": 161,
+        "percentage": 0.45,
+        "mean_z_score": 0.78,
+        "max_z_score": 3.25
+      },
+      "num_accts_ever_120_pd": {
+        "count": 849,
+        "percentage": 2.35,
+        "mean_z_score": 0.57,
+        "max_z_score": 22.35
+      },
+      "num_actv_bc_tl": {
+        "count": 468,
+        "percentage": 1.29,
+        "mean_z_score": 0.75,
+        "max_z_score": 9.88
+      },
+      "num_actv_rev_tl": {
+        "count": 510,
+        "percentage": 1.41,
+        "mean_z_score": 0.74,
+        "max_z_score": 10.76
+      },
+      "num_bc_sats": {
+        "count": 561,
+        "percentage": 1.55,
+        "mean_z_score": 0.74,
+        "max_z_score": 9.86
+      },
+      "num_bc_tl": {
+        "count": 497,
+        "percentage": 1.37,
+        "mean_z_score": 0.75,
+        "max_z_score": 10.47
+      },
+      "num_il_tl": {
+        "count": 673,
+        "percentage": 1.86,
+        "mean_z_score": 0.71,
+        "max_z_score": 12.98
+      },
+      "num_op_rev_tl": {
+        "count": 555,
+        "percentage": 1.53,
+        "mean_z_score": 0.75,
+        "max_z_score": 10.48
+      },
+      "num_rev_accts": {
+        "count": 516,
+        "percentage": 1.43,
+        "mean_z_score": 0.76,
+        "max_z_score": 11.0
+      },
+      "num_rev_tl_bal_gt_0": {
+        "count": 436,
+        "percentage": 1.21,
+        "mean_z_score": 0.75,
+        "max_z_score": 10.16
+      },
+      "num_sats": {
+        "count": 432,
+        "percentage": 1.19,
+        "mean_z_score": 0.75,
+        "max_z_score": 9.29
+      },
+      "num_tl_120dpd_2m": {
+        "count": 27,
+        "percentage": 0.07,
+        "mean_z_score": 0.05,
+        "max_z_score": 36.59
+      },
+      "num_tl_30dpd": {
+        "count": 87,
+        "percentage": 0.24,
+        "mean_z_score": 0.1,
+        "max_z_score": 38.82
+      },
+      "num_tl_90g_dpd_24m": {
+        "count": 449,
+        "percentage": 1.24,
+        "mean_z_score": 0.32,
+        "max_z_score": 31.8
+      },
+      "num_tl_op_past_12m": {
+        "count": 490,
+        "percentage": 1.35,
+        "mean_z_score": 0.74,
+        "max_z_score": 11.54
+      },
+      "pct_tl_nvr_dlq": {
+        "count": 826,
+        "percentage": 2.28,
+        "mean_z_score": 0.72,
+        "max_z_score": 9.13
+      },
+      "percent_bc_gt_75": {
+        "count": 0,
+        "percentage": 0.0,
+        "mean_z_score": 0.86,
+        "max_z_score": 1.63
+      },
+      "pub_rec_bankruptcies": {
+        "count": 229,
+        "percentage": 0.63,
+        "mean_z_score": 0.62,
+        "max_z_score": 21.37
+      },
+      "tax_liens": {
+        "count": 324,
+        "percentage": 0.9,
+        "mean_z_score": 0.27,
+        "max_z_score": 32.7
+      },
+      "tot_hi_cred_lim": {
+        "count": 540,
+        "percentage": 1.49,
+        "mean_z_score": 0.74,
+        "max_z_score": 13.73
+      },
+      "total_bal_ex_mort": {
+        "count": 649,
+        "percentage": 1.79,
+        "mean_z_score": 0.64,
+        "max_z_score": 28.62
+      },
+      "total_bc_limit": {
+        "count": 606,
+        "percentage": 1.68,
+        "mean_z_score": 0.65,
+        "max_z_score": 64.2
+      },
+      "total_il_high_credit_limit": {
+        "count": 634,
+        "percentage": 1.75,
+        "mean_z_score": 0.67,
+        "max_z_score": 27.38
+      }
+    },
+    "total_outliers": "41659",
+    "critical_columns": [],
+    "timestamp": "2025-10-17T10:14:31.276570"
+  },
+  "distributions": {
+    "columns_distribution": {
+      "loan_amnt": {
+        "mean": 14995.4783,
+        "std": 9155.6676,
+        "min": 1000.0,
+        "max": 40000.0,
+        "skewness": 0.7865,
+        "kurtosis": -0.0928,
+        "variance": 83826249.7367
+      },
+      "funded_amnt": {
+        "mean": 14991.6174,
+        "std": 9154.2573,
+        "min": 1000.0,
+        "max": 40000.0,
+        "skewness": 0.787,
+        "kurtosis": -0.0914,
+        "variance": 83800426.5638
+      },
+      "funded_amnt_inv": {
+        "mean": 14974.6185,
+        "std": 9158.2367,
+        "min": 0.0,
+        "max": 40000.0,
+        "skewness": 0.786,
+        "kurtosis": -0.0912,
+        "variance": 83873300.0088
+      },
+      "int_rate": {
+        "mean": 13.0715,
+        "std": 4.8183,
+        "min": 5.31,
+        "max": 30.99,
+        "skewness": 0.7493,
+        "kurtosis": 0.5466,
+        "variance": 23.2156
+      },
+      "installment": {
+        "mean": 444.3843,
+        "std": 266.73,
+        "min": 21.74,
+        "max": 1556.75,
+        "skewness": 1.0146,
+        "kurtosis": 0.7233,
+        "variance": 71144.891
+      },
+      "annual_inc": {
+        "mean": 78153.0516,
+        "std": 73856.8126,
+        "min": 0.0,
+        "max": 6599100.0,
+        "skewness": 37.2399,
+        "kurtosis": 2943.9855,
+        "variance": 5454828765.0396
+      },
+      "dti": {
+        "mean": 18.8537,
+        "std": 14.2603,
+        "min": 0.0,
+        "max": 999.0,
+        "skewness": 28.7461,
+        "kurtosis": 1688.0719,
+        "variance": 203.3573
+      },
+      "delinq_2yrs": {
+        "mean": 0.307,
+        "std": 0.8603,
+        "min": 0.0,
+        "max": 19.0,
+        "skewness": 5.3678,
+        "kurtosis": 48.5205,
+        "variance": 0.7402
+      },
+      "fico_range_low": {
+        "mean": 698.863,
+        "std": 33.1662,
+        "min": 640.0,
+        "max": 845.0,
+        "skewness": 1.1903,
+        "kurtosis": 1.3507,
+        "variance": 1099.9963
+      },
+      "fico_range_high": {
+        "mean": 702.8633,
+        "std": 33.1677,
+        "min": 644.0,
+        "max": 850.0,
+        "skewness": 1.1907,
+        "kurtosis": 1.3533,
+        "variance": 1100.0936
+      },
+      "inq_last_6mths": {
+        "mean": 0.578,
+        "std": 0.9003,
+        "min": 0.0,
+        "max": 28.0,
+        "skewness": 2.6482,
+        "kurtosis": 28.4716,
+        "variance": 0.8105
+      },
+      "mths_since_last_delinq": {
+        "mean": 33.2474,
+        "std": 15.4015,
+        "min": 0.0,
+        "max": 150.0,
+        "skewness": 0.9261,
+        "kurtosis": 2.0518,
+        "variance": 237.2066
+      },
+      "open_acc": {
+        "mean": 11.5893,
+        "std": 5.6055,
+        "min": 0.0,
+        "max": 63.0,
+        "skewness": 1.2922,
+        "kurtosis": 3.2338,
+        "variance": 31.4214
+      },
+      "pub_rec": {
+        "mean": 0.2019,
+        "std": 0.5598,
+        "min": 0.0,
+        "max": 20.0,
+        "skewness": 5.9672,
+        "kurtosis": 87.3289,
+        "variance": 0.3134
+      },
+      "revol_bal": {
+        "mean": 16844.3843,
+        "std": 24866.8245,
+        "min": 0.0,
+        "max": 1470945.0,
+        "skewness": 13.814,
+        "kurtosis": 465.8193,
+        "variance": 618358959.2198
+      },
+      "revol_util": {
+        "mean": 50.2191,
+        "std": 24.7927,
+        "min": 0.0,
+        "max": 128.7,
+        "skewness": -0.0111,
+        "kurtosis": -0.8212,
+        "variance": 614.6762
+      },
+      "total_acc": {
+        "mean": 24.2228,
+        "std": 12.0576,
+        "min": 2.0,
+        "max": 121.0,
+        "skewness": 1.0103,
+        "kurtosis": 1.87,
+        "variance": 145.3867
+      },
+      "out_prncp": {
+        "mean": 4189.1348,
+        "std": 7312.8054,
+        "min": 0.0,
+        "max": 39091.64,
+        "skewness": 2.0877,
+        "kurtosis": 4.1468,
+        "variance": 53477122.3364
+      },
+      "out_prncp_inv": {
+        "mean": 4188.136,
+        "std": 7311.8716,
+        "min": 0.0,
+        "max": 39091.64,
+        "skewness": 2.0882,
+        "kurtosis": 4.149,
+        "variance": 53463465.8048
+      },
+      "total_pymnt": {
+        "mean": 12016.4774,
+        "std": 9839.4044,
+        "min": 0.0,
+        "max": 59683.7998,
+        "skewness": 1.2637,
+        "kurtosis": 1.3416,
+        "variance": 96813879.1695
+      },
+      "total_pymnt_inv": {
+        "mean": 11999.1482,
+        "std": 9836.0842,
+        "min": 0.0,
+        "max": 59683.8,
+        "skewness": 1.264,
+        "kurtosis": 1.3407,
+        "variance": 96748552.0629
+      },
+      "total_rec_prncp": {
+        "mean": 9456.1669,
+        "std": 8283.6757,
+        "min": 0.0,
+        "max": 40000.0,
+        "skewness": 1.26,
+        "kurtosis": 1.1365,
+        "variance": 68619283.1187
+      },
+      "total_rec_int": {
+        "mean": 2412.5156,
+        "std": 2645.0863,
+        "min": 0.0,
+        "max": 24721.2,
+        "skewness": 2.5331,
+        "kurtosis": 9.0136,
+        "variance": 6996481.6718
+      },
+      "total_rec_late_fee": {
+        "mean": 1.5508,
+        "std": 11.8218,
+        "min": -0.0,
+        "max": 591.12,
+        "skewness": 17.753,
+        "kurtosis": 516.063,
+        "variance": 139.7556
+      },
+      "recoveries": {
+        "mean": 146.2441,
+        "std": 787.4999,
+        "min": 0.0,
+        "max": 35581.88,
+        "skewness": 12.1457,
+        "kurtosis": 267.8632,
+        "variance": 620156.109
+      },
+      "collection_recovery_fee": {
+        "mean": 24.2551,
+        "std": 138.894,
+        "min": 0.0,
+        "max": 6404.7384,
+        "skewness": 13.1395,
+        "kurtosis": 304.2246,
+        "variance": 19291.5456
+      },
+      "last_pymnt_amnt": {
+        "mean": 3391.8711,
+        "std": 5971.7422,
+        "min": 0.0,
+        "max": 40676.84,
+        "skewness": 2.5773,
+        "kurtosis": 7.146,
+        "variance": 35661704.8258
+      },
+      "last_fico_range_high": {
+        "mean": 687.6671,
+        "std": 73.5462,
+        "min": 0.0,
+        "max": 850.0,
+        "skewness": -0.7352,
+        "kurtosis": 0.7116,
+        "variance": 5409.0417
+      },
+      "last_fico_range_low": {
+        "mean": 675.3602,
+        "std": 112.1884,
+        "min": 0.0,
+        "max": 845.0,
+        "skewness": -3.7024,
+        "kurtosis": 19.5638,
+        "variance": 12586.2273
+      },
+      "collections_12_mths_ex_med": {
+        "mean": 0.0181,
+        "std": 0.1556,
+        "min": 0.0,
+        "max": 9.0,
+        "skewness": 14.29,
+        "kurtosis": 430.5657,
+        "variance": 0.0242
+      },
+      "acc_now_delinq": {
+        "mean": 0.004,
+        "std": 0.0653,
+        "min": 0.0,
+        "max": 2.0,
+        "skewness": 17.5565,
+        "kurtosis": 336.9877,
+        "variance": 0.0043
+      },
+      "tot_coll_amt": {
+        "mean": 223.7475,
+        "std": 1850.9714,
+        "min": 0.0,
+        "max": 144369.0,
+        "skewness": 31.9724,
+        "kurtosis": 1724.6652,
+        "variance": 3426095.2731
+      },
+      "tot_cur_bal": {
+        "mean": 140088.5163,
+        "std": 156436.677,
+        "min": 0.0,
+        "max": 2391653.0,
+        "skewness": 2.4601,
+        "kurtosis": 11.8676,
+        "variance": 24472433912.3927
+      },
+      "open_acc_6m": {
+        "mean": 0.963,
+        "std": 0.9061,
+        "min": 0.0,
+        "max": 12.0,
+        "skewness": 2.1008,
+        "kurtosis": 9.2929,
+        "variance": 0.821
+      },
+      "open_act_il": {
+        "mean": 2.4807,
+        "std": 2.3956,
+        "min": 0.0,
+        "max": 41.0,
+        "skewness": 4.1433,
+        "kurtosis": 26.7053,
+        "variance": 5.739
+      },
+      "open_il_12m": {
+        "mean": 0.4159,
+        "std": 0.7978,
+        "min": 0.0,
+        "max": 12.0,
+        "skewness": 2.5516,
+        "kurtosis": 9.7805,
+        "variance": 0.6364
+      },
+      "open_il_24m": {
+        "mean": 1.3489,
+        "std": 1.2644,
+        "min": 0.0,
+        "max": 26.0,
+        "skewness": 2.6422,
+        "kurtosis": 14.3457,
+        "variance": 1.5987
+      },
+      "mths_since_rcnt_il": {
+        "mean": 17.8367,
+        "std": 20.3822,
+        "min": 0.0,
+        "max": 466.0,
+        "skewness": 4.7675,
+        "kurtosis": 34.7879,
+        "variance": 415.4339
+      },
+      "total_bal_il": {
+        "mean": 30848.4991,
+        "std": 35886.7136,
+        "min": 0.0,
+        "max": 933896.0,
+        "skewness": 5.2403,
+        "kurtosis": 53.2709,
+        "variance": 1287856211.9675
+      },
+      "il_util": {
+        "mean": 70.4301,
+        "std": 17.3055,
+        "min": 0.0,
+        "max": 275.0,
+        "skewness": -0.7415,
+        "kurtosis": 4.3277,
+        "variance": 299.4788
+      },
+      "open_rv_12m": {
+        "mean": 1.1854,
+        "std": 1.202,
+        "min": 0.0,
+        "max": 18.0,
+        "skewness": 2.7951,
+        "kurtosis": 14.2703,
+        "variance": 1.4448
+      },
+      "open_rv_24m": {
+        "mean": 2.4688,
+        "std": 2.0587,
+        "min": 0.0,
+        "max": 31.0,
+        "skewness": 2.6591,
+        "kurtosis": 12.9337,
+        "variance": 4.2384
+      },
+      "max_bal_bc": {
+        "mean": 5303.6842,
+        "std": 7552.1892,
+        "min": 0.0,
+        "max": 1170668.0,
+        "skewness": 102.6745,
+        "kurtosis": 15684.113,
+        "variance": 57035561.1403
+      },
+      "all_util": {
+        "mean": 57.3357,
+        "std": 16.5658,
+        "min": 0.0,
+        "max": 181.0,
+        "skewness": -0.2114,
+        "kurtosis": 1.7165,
+        "variance": 274.4244
+      },
+      "total_rev_hi_lim": {
+        "mean": 34520.7522,
+        "std": 36762.5467,
+        "min": 0.0,
+        "max": 1875800.0,
+        "skewness": 8.8261,
+        "kurtosis": 242.4234,
+        "variance": 1351484837.9087
+      },
+      "inq_fi": {
+        "mean": 1.018,
+        "std": 1.2064,
+        "min": 0.0,
+        "max": 22.0,
+        "skewness": 3.6329,
+        "kurtosis": 25.0629,
+        "variance": 1.4554
+      },
+      "total_cu_tl": {
+        "mean": 0.952,
+        "std": 2.3356,
+        "min": 0.0,
+        "max": 68.0,
+        "skewness": 4.9445,
+        "kurtosis": 49.7551,
+        "variance": 5.4552
+      },
+      "inq_last_12m": {
+        "mean": 1.6393,
+        "std": 1.9306,
+        "min": 0.0,
+        "max": 30.0,
+        "skewness": 3.2456,
+        "kurtosis": 17.6573,
+        "variance": 3.7273
+      },
+      "acc_open_past_24mths": {
+        "mean": 4.5202,
+        "std": 3.1158,
+        "min": 0.0,
+        "max": 34.0,
+        "skewness": 1.3744,
+        "kurtosis": 3.9744,
+        "variance": 9.7081
+      },
+      "avg_cur_bal": {
+        "mean": 13316.815,
+        "std": 16097.6654,
+        "min": 0.0,
+        "max": 398609.0,
+        "skewness": 3.661,
+        "kurtosis": 31.7388,
+        "variance": 259134832.5573
+      },
+      "bc_open_to_buy": {
+        "mean": 11201.8813,
+        "std": 16367.7849,
+        "min": 0.0,
+        "max": 345826.0,
+        "skewness": 3.7656,
+        "kurtosis": 25.038,
+        "variance": 267904383.4354
+      },
+      "bc_util": {
+        "mean": 57.8619,
+        "std": 28.1263,
+        "min": 0.0,
+        "max": 152.7,
+        "skewness": -0.2888,
+        "kurtosis": -0.9361,
+        "variance": 791.0913
+      },
+      "chargeoff_within_12_mths": {
+        "mean": 0.0084,
+        "std": 0.1011,
+        "min": 0.0,
+        "max": 5.0,
+        "skewness": 15.123,
+        "kurtosis": 335.3703,
+        "variance": 0.0102
+      },
+      "delinq_amnt": {
+        "mean": 14.3237,
+        "std": 686.1149,
+        "min": 0.0,
+        "max": 65000.0,
+        "skewness": 63.6776,
+        "kurtosis": 4563.434,
+        "variance": 470753.6955
+      },
+      "mo_sin_old_il_acct": {
+        "mean": 125.843,
+        "std": 51.8213,
+        "min": 1.0,
+        "max": 822.0,
+        "skewness": 0.3787,
+        "kurtosis": 2.8232,
+        "variance": 2685.4467
+      },
+      "mo_sin_old_rev_tl_op": {
+        "mean": 181.2395,
+        "std": 95.2918,
+        "min": 3.0,
+        "max": 769.0,
+        "skewness": 1.0235,
+        "kurtosis": 1.486,
+        "variance": 9080.5262
+      },
+      "mo_sin_rcnt_rev_tl_op": {
+        "mean": 13.8497,
+        "std": 17.4536,
+        "min": 0.0,
+        "max": 334.0,
+        "skewness": 3.9293,
+        "kurtosis": 27.9363,
+        "variance": 304.6288
+      },
+      "mo_sin_rcnt_tl": {
+        "mean": 8.203,
+        "std": 8.9367,
+        "min": 0.0,
+        "max": 192.0,
+        "skewness": 4.3537,
+        "kurtosis": 38.5275,
+        "variance": 79.8637
+      },
+      "mort_acc": {
+        "mean": 1.5502,
+        "std": 1.9177,
+        "min": 0.0,
+        "max": 51.0,
+        "skewness": 2.4495,
+        "kurtosis": 25.6775,
+        "variance": 3.6777
+      },
+      "mths_since_recent_bc": {
+        "mean": 24.5853,
+        "std": 31.9231,
+        "min": 0.0,
+        "max": 562.0,
+        "skewness": 3.5076,
+        "kurtosis": 19.8922,
+        "variance": 1019.083
+      },
+      "mths_since_recent_inq": {
+        "mean": 6.8858,
+        "std": 5.5674,
+        "min": 0.0,
+        "max": 25.0,
+        "skewness": 1.0175,
+        "kurtosis": 0.4769,
+        "variance": 30.9955
+      },
+      "num_accts_ever_120_pd": {
+        "mean": 0.4993,
+        "std": 1.3647,
+        "min": 0.0,
+        "max": 31.0,
+        "skewness": 5.3916,
+        "kurtosis": 48.1945,
+        "variance": 1.8623
+      },
+      "num_actv_bc_tl": {
+        "mean": 3.6205,
+        "std": 2.265,
+        "min": 0.0,
+        "max": 26.0,
+        "skewness": 1.4847,
+        "kurtosis": 4.3817,
+        "variance": 5.13
+      },
+      "num_actv_rev_tl": {
+        "mean": 5.5646,
+        "std": 3.2941,
+        "min": 0.0,
+        "max": 41.0,
+        "skewness": 1.6137,
+        "kurtosis": 5.417,
+        "variance": 10.8512
+      },
+      "num_bc_sats": {
+        "mean": 4.7199,
+        "std": 2.97,
+        "min": 0.0,
+        "max": 34.0,
+        "skewness": 1.7466,
+        "kurtosis": 6.1404,
+        "variance": 8.8208
+      },
+      "num_bc_tl": {
+        "mean": 7.7066,
+        "std": 4.6148,
+        "min": 0.0,
+        "max": 56.0,
+        "skewness": 1.427,
+        "kurtosis": 3.6616,
+        "variance": 21.2964
+      },
+      "num_il_tl": {
+        "mean": 8.3638,
+        "std": 7.3702,
+        "min": 0.0,
+        "max": 104.0,
+        "skewness": 2.2661,
+        "kurtosis": 9.0368,
+        "variance": 54.3199
+      },
+      "num_op_rev_tl": {
+        "mean": 8.1862,
+        "std": 4.5607,
+        "min": 0.0,
+        "max": 56.0,
+        "skewness": 1.5311,
+        "kurtosis": 4.5681,
+        "variance": 20.8004
+      },
+      "num_rev_accts": {
+        "mean": 13.9742,
+        "std": 7.9124,
+        "min": 0.0,
+        "max": 101.0,
+        "skewness": 1.383,
+        "kurtosis": 3.4055,
+        "variance": 62.6054
+      },
+      "num_rev_tl_bal_gt_0": {
+        "mean": 5.515,
+        "std": 3.1962,
+        "min": 0.0,
+        "max": 38.0,
+        "skewness": 1.4604,
+        "kurtosis": 4.1661,
+        "variance": 10.2157
+      },
+      "num_sats": {
+        "mean": 11.5853,
+        "std": 5.5372,
+        "min": 0.0,
+        "max": 63.0,
+        "skewness": 1.3121,
+        "kurtosis": 3.3661,
+        "variance": 30.6602
+      },
+      "num_tl_120dpd_2m": {
+        "mean": 0.0007,
+        "std": 0.0273,
+        "min": 0.0,
+        "max": 1.0,
+        "skewness": 36.56,
+        "kurtosis": 1334.6304,
+        "variance": 0.0007
+      },
+      "num_tl_30dpd": {
+        "mean": 0.0025,
+        "std": 0.0515,
+        "min": 0.0,
+        "max": 2.0,
+        "skewness": 21.7684,
+        "kurtosis": 513.2609,
+        "variance": 0.0026
+      },
+      "num_tl_90g_dpd_24m": {
+        "mean": 0.0797,
+        "std": 0.4692,
+        "min": 0.0,
+        "max": 15.0,
+        "skewness": 11.8132,
+        "kurtosis": 208.2677,
+        "variance": 0.2202
+      },
+      "num_tl_op_past_12m": {
+        "mean": 2.0792,
+        "std": 1.8128,
+        "min": 0.0,
+        "max": 23.0,
+        "skewness": 1.5599,
+        "kurtosis": 5.0423,
+        "variance": 3.2861
+      },
+      "pct_tl_nvr_dlq": {
+        "mean": 94.2375,
+        "std": 9.0659,
+        "min": 11.5,
+        "max": 100.0,
+        "skewness": -2.3342,
+        "kurtosis": 7.1169,
+        "variance": 82.1903
+      },
+      "percent_bc_gt_75": {
+        "mean": 42.1946,
+        "std": 35.5509,
+        "min": 0.0,
+        "max": 100.0,
+        "skewness": 0.3298,
+        "kurtosis": -1.1851,
+        "variance": 1263.8669
+      },
+      "pub_rec_bankruptcies": {
+        "mean": 0.1312,
+        "std": 0.3682,
+        "min": 0.0,
+        "max": 8.0,
+        "skewness": 3.373,
+        "kurtosis": 20.1176,
+        "variance": 0.1355
+      },
+      "tax_liens": {
+        "mean": 0.0466,
+        "std": 0.3349,
+        "min": 0.0,
+        "max": 11.0,
+        "skewness": 11.9645,
+        "kurtosis": 209.072,
+        "variance": 0.1122
+      },
+      "tot_hi_cred_lim": {
+        "mean": 176149.1509,
+        "std": 175843.2649,
+        "min": 0.0,
+        "max": 2589837.0,
+        "skewness": 2.4261,
+        "kurtosis": 11.7145,
+        "variance": 30920853818.0811
+      },
+      "total_bal_ex_mort": {
+        "mean": 51073.7541,
+        "std": 50916.9952,
+        "min": 0.0,
+        "max": 1508205.0,
+        "skewness": 4.3808,
+        "kurtosis": 47.6814,
+        "variance": 2592540396.7509
+      },
+      "total_bc_limit": {
+        "mean": 23027.5155,
+        "std": 24081.1607,
+        "min": 0.0,
+        "max": 1569000.0,
+        "skewness": 9.5963,
+        "kurtosis": 479.536,
+        "variance": 579902301.118
+      },
+      "total_il_high_credit_limit": {
+        "mean": 43692.7151,
+        "std": 45365.1804,
+        "min": 0.0,
+        "max": 1285625.0,
+        "skewness": 3.4942,
+        "kurtosis": 34.2851,
+        "variance": 2057999591.3162
+      }
+    },
+    "skewed_columns": [
+      {
+        "column": "annual_inc",
+        "skewness": 37.2399
+      },
+      {
+        "column": "dti",
+        "skewness": 28.7461
+      },
+      {
+        "column": "delinq_2yrs",
+        "skewness": 5.3678
+      },
+      {
+        "column": "inq_last_6mths",
+        "skewness": 2.6482
+      },
+      {
+        "column": "pub_rec",
+        "skewness": 5.9672
+      },
+      {
+        "column": "revol_bal",
+        "skewness": 13.814
+      },
+      {
+        "column": "out_prncp",
+        "skewness": 2.0877
+      },
+      {
+        "column": "out_prncp_inv",
+        "skewness": 2.0882
+      },
+      {
+        "column": "total_rec_int",
+        "skewness": 2.5331
+      },
+      {
+        "column": "total_rec_late_fee",
+        "skewness": 17.753
+      },
+      {
+        "column": "recoveries",
+        "skewness": 12.1457
+      },
+      {
+        "column": "collection_recovery_fee",
+        "skewness": 13.1395
+      },
+      {
+        "column": "last_pymnt_amnt",
+        "skewness": 2.5773
+      },
+      {
+        "column": "last_fico_range_low",
+        "skewness": -3.7024
+      },
+      {
+        "column": "collections_12_mths_ex_med",
+        "skewness": 14.29
+      },
+      {
+        "column": "acc_now_delinq",
+        "skewness": 17.5565
+      },
+      {
+        "column": "tot_coll_amt",
+        "skewness": 31.9724
+      },
+      {
+        "column": "tot_cur_bal",
+        "skewness": 2.4601
+      },
+      {
+        "column": "open_acc_6m",
+        "skewness": 2.1008
+      },
+      {
+        "column": "open_act_il",
+        "skewness": 4.1433
+      },
+      {
+        "column": "open_il_12m",
+        "skewness": 2.5516
+      },
+      {
+        "column": "open_il_24m",
+        "skewness": 2.6422
+      },
+      {
+        "column": "mths_since_rcnt_il",
+        "skewness": 4.7675
+      },
+      {
+        "column": "total_bal_il",
+        "skewness": 5.2403
+      },
+      {
+        "column": "open_rv_12m",
+        "skewness": 2.7951
+      },
+      {
+        "column": "open_rv_24m",
+        "skewness": 2.6591
+      },
+      {
+        "column": "max_bal_bc",
+        "skewness": 102.6745
+      },
+      {
+        "column": "total_rev_hi_lim",
+        "skewness": 8.8261
+      },
+      {
+        "column": "inq_fi",
+        "skewness": 3.6329
+      },
+      {
+        "column": "total_cu_tl",
+        "skewness": 4.9445
+      },
+      {
+        "column": "inq_last_12m",
+        "skewness": 3.2456
+      },
+      {
+        "column": "avg_cur_bal",
+        "skewness": 3.661
+      },
+      {
+        "column": "bc_open_to_buy",
+        "skewness": 3.7656
+      },
+      {
+        "column": "chargeoff_within_12_mths",
+        "skewness": 15.123
+      },
+      {
+        "column": "delinq_amnt",
+        "skewness": 63.6776
+      },
+      {
+        "column": "mo_sin_rcnt_rev_tl_op",
+        "skewness": 3.9293
+      },
+      {
+        "column": "mo_sin_rcnt_tl",
+        "skewness": 4.3537
+      },
+      {
+        "column": "mort_acc",
+        "skewness": 2.4495
+      },
+      {
+        "column": "mths_since_recent_bc",
+        "skewness": 3.5076
+      },
+      {
+        "column": "num_accts_ever_120_pd",
+        "skewness": 5.3916
+      },
+      {
+        "column": "num_il_tl",
+        "skewness": 2.2661
+      },
+      {
+        "column": "num_tl_120dpd_2m",
+        "skewness": 36.56
+      },
+      {
+        "column": "num_tl_30dpd",
+        "skewness": 21.7684
+      },
+      {
+        "column": "num_tl_90g_dpd_24m",
+        "skewness": 11.8132
+      },
+      {
+        "column": "pct_tl_nvr_dlq",
+        "skewness": -2.3342
+      },
+      {
+        "column": "pub_rec_bankruptcies",
+        "skewness": 3.373
+      },
+      {
+        "column": "tax_liens",
+        "skewness": 11.9645
+      },
+      {
+        "column": "tot_hi_cred_lim",
+        "skewness": 2.4261
+      },
+      {
+        "column": "total_bal_ex_mort",
+        "skewness": 4.3808
+      },
+      {
+        "column": "total_bc_limit",
+        "skewness": 9.5963
+      },
+      {
+        "column": "total_il_high_credit_limit",
+        "skewness": 3.4942
+      }
+    ],
+    "high_kurtosis_columns": [
+      {
+        "column": "annual_inc",
+        "kurtosis": 2943.9855
+      },
+      {
+        "column": "dti",
+        "kurtosis": 1688.0719
+      },
+      {
+        "column": "delinq_2yrs",
+        "kurtosis": 48.5205
+      },
+      {
+        "column": "inq_last_6mths",
+        "kurtosis": 28.4716
+      },
+      {
+        "column": "open_acc",
+        "kurtosis": 3.2338
+      },
+      {
+        "column": "pub_rec",
+        "kurtosis": 87.3289
+      },
+      {
+        "column": "revol_bal",
+        "kurtosis": 465.8193
+      },
+      {
+        "column": "out_prncp",
+        "kurtosis": 4.1468
+      },
+      {
+        "column": "out_prncp_inv",
+        "kurtosis": 4.149
+      },
+      {
+        "column": "total_rec_int",
+        "kurtosis": 9.0136
+      },
+      {
+        "column": "total_rec_late_fee",
+        "kurtosis": 516.063
+      },
+      {
+        "column": "recoveries",
+        "kurtosis": 267.8632
+      },
+      {
+        "column": "collection_recovery_fee",
+        "kurtosis": 304.2246
+      },
+      {
+        "column": "last_pymnt_amnt",
+        "kurtosis": 7.146
+      },
+      {
+        "column": "last_fico_range_low",
+        "kurtosis": 19.5638
+      },
+      {
+        "column": "collections_12_mths_ex_med",
+        "kurtosis": 430.5657
+      },
+      {
+        "column": "acc_now_delinq",
+        "kurtosis": 336.9877
+      },
+      {
+        "column": "tot_coll_amt",
+        "kurtosis": 1724.6652
+      },
+      {
+        "column": "tot_cur_bal",
+        "kurtosis": 11.8676
+      },
+      {
+        "column": "open_acc_6m",
+        "kurtosis": 9.2929
+      },
+      {
+        "column": "open_act_il",
+        "kurtosis": 26.7053
+      },
+      {
+        "column": "open_il_12m",
+        "kurtosis": 9.7805
+      },
+      {
+        "column": "open_il_24m",
+        "kurtosis": 14.3457
+      },
+      {
+        "column": "mths_since_rcnt_il",
+        "kurtosis": 34.7879
+      },
+      {
+        "column": "total_bal_il",
+        "kurtosis": 53.2709
+      },
+      {
+        "column": "il_util",
+        "kurtosis": 4.3277
+      },
+      {
+        "column": "open_rv_12m",
+        "kurtosis": 14.2703
+      },
+      {
+        "column": "open_rv_24m",
+        "kurtosis": 12.9337
+      },
+      {
+        "column": "max_bal_bc",
+        "kurtosis": 15684.113
+      },
+      {
+        "column": "total_rev_hi_lim",
+        "kurtosis": 242.4234
+      },
+      {
+        "column": "inq_fi",
+        "kurtosis": 25.0629
+      },
+      {
+        "column": "total_cu_tl",
+        "kurtosis": 49.7551
+      },
+      {
+        "column": "inq_last_12m",
+        "kurtosis": 17.6573
+      },
+      {
+        "column": "acc_open_past_24mths",
+        "kurtosis": 3.9744
+      },
+      {
+        "column": "avg_cur_bal",
+        "kurtosis": 31.7388
+      },
+      {
+        "column": "bc_open_to_buy",
+        "kurtosis": 25.038
+      },
+      {
+        "column": "chargeoff_within_12_mths",
+        "kurtosis": 335.3703
+      },
+      {
+        "column": "delinq_amnt",
+        "kurtosis": 4563.434
+      },
+      {
+        "column": "mo_sin_rcnt_rev_tl_op",
+        "kurtosis": 27.9363
+      },
+      {
+        "column": "mo_sin_rcnt_tl",
+        "kurtosis": 38.5275
+      },
+      {
+        "column": "mort_acc",
+        "kurtosis": 25.6775
+      },
+      {
+        "column": "mths_since_recent_bc",
+        "kurtosis": 19.8922
+      },
+      {
+        "column": "num_accts_ever_120_pd",
+        "kurtosis": 48.1945
+      },
+      {
+        "column": "num_actv_bc_tl",
+        "kurtosis": 4.3817
+      },
+      {
+        "column": "num_actv_rev_tl",
+        "kurtosis": 5.417
+      },
+      {
+        "column": "num_bc_sats",
+        "kurtosis": 6.1404
+      },
+      {
+        "column": "num_bc_tl",
+        "kurtosis": 3.6616
+      },
+      {
+        "column": "num_il_tl",
+        "kurtosis": 9.0368
+      },
+      {
+        "column": "num_op_rev_tl",
+        "kurtosis": 4.5681
+      },
+      {
+        "column": "num_rev_accts",
+        "kurtosis": 3.4055
+      },
+      {
+        "column": "num_rev_tl_bal_gt_0",
+        "kurtosis": 4.1661
+      },
+      {
+        "column": "num_sats",
+        "kurtosis": 3.3661
+      },
+      {
+        "column": "num_tl_120dpd_2m",
+        "kurtosis": 1334.6304
+      },
+      {
+        "column": "num_tl_30dpd",
+        "kurtosis": 513.2609
+      },
+      {
+        "column": "num_tl_90g_dpd_24m",
+        "kurtosis": 208.2677
+      },
+      {
+        "column": "num_tl_op_past_12m",
+        "kurtosis": 5.0423
+      },
+      {
+        "column": "pct_tl_nvr_dlq",
+        "kurtosis": 7.1169
+      },
+      {
+        "column": "pub_rec_bankruptcies",
+        "kurtosis": 20.1176
+      },
+      {
+        "column": "tax_liens",
+        "kurtosis": 209.072
+      },
+      {
+        "column": "tot_hi_cred_lim",
+        "kurtosis": 11.7145
+      },
+      {
+        "column": "total_bal_ex_mort",
+        "kurtosis": 47.6814
+      },
+      {
+        "column": "total_bc_limit",
+        "kurtosis": 479.536
+      },
+      {
+        "column": "total_il_high_credit_limit",
+        "kurtosis": 34.2851
+      }
+    ],
+    "low_variance_columns": [
+      {
+        "column": "acc_now_delinq",
+        "variance": 0.0043
+      },
+      {
+        "column": "num_tl_120dpd_2m",
+        "variance": 0.0007
+      },
+      {
+        "column": "num_tl_30dpd",
+        "variance": 0.0026
+      }
+    ],
+    "timestamp": "2025-10-17T10:14:31.329483"
+  },
+  "data_integrity": {
+    "duplicate_rows": "0",
+    "duplicate_percentage": 0.0,
+    "duplicate_columns": [],
+    "constant_columns": [],
+    "highly_correlated_columns": [
+      {
+        "column1": "loan_amnt",
+        "column2": "funded_amnt",
+        "correlation": 0.9998
+      },
+      {
+        "column1": "loan_amnt",
+        "column2": "funded_amnt_inv",
+        "correlation": 0.9993
+      },
+      {
+        "column1": "funded_amnt",
+        "column2": "funded_amnt_inv",
+        "correlation": 0.9995
+      },
+      {
+        "column1": "fico_range_low",
+        "column2": "fico_range_high",
+        "correlation": 1.0
+      },
+      {
+        "column1": "open_acc",
+        "column2": "num_sats",
+        "correlation": 0.9903
+      },
+      {
+        "column1": "out_prncp",
+        "column2": "out_prncp_inv",
+        "correlation": 1.0
+      },
+      {
+        "column1": "total_pymnt",
+        "column2": "total_pymnt_inv",
+        "correlation": 0.9995
+      },
+      {
+        "column1": "total_pymnt",
+        "column2": "total_rec_prncp",
+        "correlation": 0.9662
+      },
+      {
+        "column1": "total_pymnt_inv",
+        "column2": "total_rec_prncp",
+        "correlation": 0.9658
+      },
+      {
+        "column1": "recoveries",
+        "column2": "collection_recovery_fee",
+        "correlation": 0.9717
+      },
+      {
+        "column1": "tot_cur_bal",
+        "column2": "tot_hi_cred_lim",
+        "correlation": 0.9828
+      },
+      {
+        "column1": "num_actv_rev_tl",
+        "column2": "num_rev_tl_bal_gt_0",
+        "correlation": 0.9825
+      }
+    ],
+    "timestamp": "2025-10-17T10:14:31.547514"
+  },
+  "categorical_data": {
+    "categorical_columns": {
+      "term": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": " 36 months",
+        "most_common_count": "25756"
+      },
+      "grade": {
+        "unique_count": 7,
+        "unique_ratio": 0.0002,
+        "most_common": "B",
+        "most_common_count": "10495"
+      },
+      "sub_grade": {
+        "unique_count": 35,
+        "unique_ratio": 0.001,
+        "most_common": "C1",
+        "most_common_count": "2352"
+      },
+      "emp_title": {
+        "unique_count": 17642,
+        "unique_ratio": 0.4878,
+        "most_common": "Teacher",
+        "most_common_count": "3372"
+      },
+      "emp_length": {
+        "unique_count": 11,
+        "unique_ratio": 0.0003,
+        "most_common": "10+ years",
+        "most_common_count": "14376"
+      },
+      "home_ownership": {
+        "unique_count": 6,
+        "unique_ratio": 0.0002,
+        "most_common": "MORTGAGE",
+        "most_common_count": "17743"
+      },
+      "verification_status": {
+        "unique_count": 3,
+        "unique_ratio": 0.0001,
+        "most_common": "Source Verified",
+        "most_common_count": "14105"
+      },
+      "pymnt_plan": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "n",
+        "most_common_count": "36159"
+      },
+      "purpose": {
+        "unique_count": 14,
+        "unique_ratio": 0.0004,
+        "most_common": "debt_consolidation",
+        "most_common_count": "20368"
+      },
+      "title": {
+        "unique_count": 1776,
+        "unique_ratio": 0.0491,
+        "most_common": "Debt consolidation",
+        "most_common_count": "18721"
+      },
+      "zip_code": {
+        "unique_count": 855,
+        "unique_ratio": 0.0236,
+        "most_common": "750xx",
+        "most_common_count": "382"
+      },
+      "addr_state": {
+        "unique_count": 50,
+        "unique_ratio": 0.0014,
+        "most_common": "CA",
+        "most_common_count": "4996"
+      },
+      "earliest_cr_line": {
+        "unique_count": 604,
+        "unique_ratio": 0.0167,
+        "most_common": "Sep-2005",
+        "most_common_count": "256"
+      },
+      "initial_list_status": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "w",
+        "most_common_count": "24428"
+      },
+      "last_pymnt_d": {
+        "unique_count": 126,
+        "unique_ratio": 0.0035,
+        "most_common": "Mar-2019",
+        "most_common_count": "13663"
+      },
+      "next_pymnt_d": {
+        "unique_count": 36,
+        "unique_ratio": 0.001,
+        "most_common": "Apr-2019",
+        "most_common_count": "36126"
+      },
+      "last_credit_pull_d": {
+        "unique_count": 110,
+        "unique_ratio": 0.003,
+        "most_common": "Mar-2019",
+        "most_common_count": "21861"
+      },
+      "application_type": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "Individual",
+        "most_common_count": "34252"
+      },
+      "hardship_flag": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "N",
+        "most_common_count": "36156"
+      },
+      "disbursement_method": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "Cash",
+        "most_common_count": "34919"
+      },
+      "debt_settlement_flag": {
+        "unique_count": 2,
+        "unique_ratio": 0.0001,
+        "most_common": "N",
+        "most_common_count": "35608"
+      }
+    },
+    "high_cardinality_columns": [],
+    "low_cardinality_columns": [
+      {
+        "column": "term",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "grade",
+        "unique_ratio": 0.0002
+      },
+      {
+        "column": "sub_grade",
+        "unique_ratio": 0.001
+      },
+      {
+        "column": "emp_length",
+        "unique_ratio": 0.0003
+      },
+      {
+        "column": "home_ownership",
+        "unique_ratio": 0.0002
+      },
+      {
+        "column": "verification_status",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "pymnt_plan",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "purpose",
+        "unique_ratio": 0.0004
+      },
+      {
+        "column": "title",
+        "unique_ratio": 0.0491
+      },
+      {
+        "column": "zip_code",
+        "unique_ratio": 0.0236
+      },
+      {
+        "column": "addr_state",
+        "unique_ratio": 0.0014
+      },
+      {
+        "column": "earliest_cr_line",
+        "unique_ratio": 0.0167
+      },
+      {
+        "column": "initial_list_status",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "last_pymnt_d",
+        "unique_ratio": 0.0035
+      },
+      {
+        "column": "next_pymnt_d",
+        "unique_ratio": 0.001
+      },
+      {
+        "column": "last_credit_pull_d",
+        "unique_ratio": 0.003
+      },
+      {
+        "column": "application_type",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "hardship_flag",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "disbursement_method",
+        "unique_ratio": 0.0001
+      },
+      {
+        "column": "debt_settlement_flag",
+        "unique_ratio": 0.0001
+      }
+    ],
+    "timestamp": "2025-10-17T10:14:31.984586"
+  }
+}

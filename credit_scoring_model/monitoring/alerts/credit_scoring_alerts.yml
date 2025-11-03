@@ -1,0 +1,63 @@
+# Алерты системы кредитного скоринга
+groups:
+  - name: credit_scoring_alerts
+    rules:
+      # Алерт высокой частоты ошибок
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Обнаружена высокая частота ошибок"
+          description: "Частота ошибок составляет {{ $value }} ошибок в секунду"
+
+      # Алерт высокого времени отклика
+      - alert: HighResponseTime
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Обнаружено высокое время отклика"
+          description: "95-й процентиль времени отклика составляет {{ $value }} секунд"
+
+      # Алерт сбоя предсказания модели
+      - alert: ModelPredictionFailure
+        expr: increase(model_prediction_failures_total[5m]) > 5
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Обнаружены сбои предсказания модели"
+          description: "{{ $value }} сбоев предсказания за последние 5 минут"
+
+      # Алерт высокой загрузки CPU
+      - alert: HighCPUUsage
+        expr: system_cpu_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Обнаружена высокая загрузка CPU"
+          description: "Загрузка CPU составляет {{ $value }}%"
+
+      # Алерт высокой загрузки памяти
+      - alert: HighMemoryUsage
+        expr: (system_memory_used_bytes / system_memory_total_bytes) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Обнаружена высокая загрузка памяти"
+          description: "Загрузка памяти составляет {{ $value }}%"
+
+      # Алерт сбоя подключения к базе данных
+      - alert: DatabaseConnectionFailure
+        expr: up{job="credit-scoring-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Сбой подключения к базе данных"
+          description: "API сервис недоступен"

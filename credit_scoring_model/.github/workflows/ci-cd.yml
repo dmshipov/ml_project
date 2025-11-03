@@ -1,0 +1,272 @@
+name: Credit Scoring CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Запуск каждую неделю в понедельник в 2:00 UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      run_full_pipeline:
+        description: 'Запустить полный пайплайн'
+        required: false
+        default: 'false'
+        type: boolean
+
+env:
+  PYTHON_VERSION: '3.13'
+  DATA_PATH: 'data/raw/accepted_2007_to_2018Q4.csv'
+
+jobs:
+  # Проверка качества кода
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Cache pip dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install black isort flake8 pytest
+    
+    - name: Code formatting check (Black)
+      run: black --check --diff .
+    
+    - name: Import sorting check (isort)
+      run: isort --check-only --diff .
+    
+    - name: Linting (flake8)
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+  # Тестирование
+  test:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Cache pip dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Create logs directory
+      run: mkdir -p logs
+    
+    - name: Create data directory
+      run: mkdir -p data/raw data/processed
+    
+    - name: Set environment variables for tests
+      run: |
+        echo "DATABASE_URL=sqlite:///test.db" >> $GITHUB_ENV
+        echo "SECRET_KEY=test-secret-key-for-ci" >> $GITHUB_ENV
+        echo "JWT_SECRET_KEY=test-jwt-secret-key-for-ci" >> $GITHUB_ENV
+    
+    - name: Run unit tests
+      run: |
+        pytest tests/unit/ -v --cov=scripts --cov-report=xml --cov-report=html
+    
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  # Проверка данных
+  data-validation:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Download sample data
+      run: |
+        mkdir -p data/raw
+        # Здесь можно добавить загрузку тестовых данных
+        # или использовать публичный датасет для тестирования
+        echo "Создаем тестовые данные для CI/CD"
+        python -c "
+        import pandas as pd
+        import numpy as np
+        np.random.seed(42)
+        n_samples = 1000
+        data = {
+            'id': range(n_samples),
+            'loan_amnt': np.random.normal(10000, 3000, n_samples),
+            'int_rate': np.random.normal(12, 3, n_samples),
+            'grade': np.random.choice(['A', 'B', 'C', 'D', 'E', 'F', 'G'], n_samples),
+            'loan_status': np.random.choice(['Fully Paid', 'Charged Off'], n_samples, p=[0.8, 0.2]),
+            'target': np.random.choice([0, 1], n_samples, p=[0.8, 0.2])
+        }
+        df = pd.DataFrame(data)
+        df.to_csv('data/raw/accepted_2007_to_2018Q4.csv', index=False)
+        print(f'Создан тестовый датасет: {df.shape}')
+        "
+    
+    - name: Run data validation
+      run: |
+        python scripts/data_processing/eda.py
+        python scripts/data_processing/preprocessing.py
+
+  # Обучение модели (только при push в main или по расписанию)
+  train-model:
+    runs-on: ubuntu-latest
+    needs: [test, data-validation]
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule' || github.event.inputs.run_full_pipeline == 'true'
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Download data
+      run: |
+        mkdir -p data/raw
+        # В реальном проекте здесь будет загрузка данных из внешнего источника
+        python -c "
+        import pandas as pd
+        import numpy as np
+        np.random.seed(42)
+        n_samples = 10000  # Больше данных для обучения
+        data = {
+            'id': range(n_samples),
+            'loan_amnt': np.random.normal(10000, 3000, n_samples),
+            'int_rate': np.random.normal(12, 3, n_samples),
+            'grade': np.random.choice(['A', 'B', 'C', 'D', 'E', 'F', 'G'], n_samples),
+            'emp_length': np.random.choice(['< 1 year', '1 year', '2 years', '3 years', '4 years', '5 years', '6 years', '7 years', '8 years', '9 years', '10+ years'], n_samples),
+            'home_ownership': np.random.choice(['RENT', 'OWN', 'MORTGAGE'], n_samples),
+            'annual_inc': np.random.lognormal(10, 0.5, n_samples),
+            'loan_status': np.random.choice(['Fully Paid', 'Charged Off'], n_samples, p=[0.8, 0.2]),
+            'target': np.random.choice([0, 1], n_samples, p=[0.8, 0.2])
+        }
+        df = pd.DataFrame(data)
+        df.to_csv('data/raw/accepted_2007_to_2018Q4.csv', index=False)
+        print(f'Создан датасет для обучения: {df.shape}')
+        "
+    
+    - name: Run full ML pipeline
+      run: |
+        python scripts/run_pipeline.py
+    
+    - name: Upload model artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: model-artifacts
+        path: |
+          models/trained/
+          models/artifacts/
+          data/processed/
+        retention-days: 30
+    
+    - name: Upload model to model registry
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "Здесь будет загрузка модели в MLflow или другой model registry"
+        # В реальном проекте здесь будет интеграция с MLflow, DVC или другим инструментом
+
+  # Развертывание (только при push в main)
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [train-model]
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download model artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: model-artifacts
+        path: models/
+    
+    - name: Deploy to staging
+      run: |
+        echo "Развертывание в staging окружение"
+        # Здесь будет развертывание в staging
+    
+    - name: Run smoke tests
+      run: |
+        echo "Запуск smoke тестов"
+        # Здесь будут тесты API и функциональности
+    
+    - name: Deploy to production
+      run: |
+        echo "Развертывание в production"
+        # Здесь будет развертывание в production
+
+  # Мониторинг качества модели
+  model-monitoring:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run model monitoring
+      run: |
+        echo "Запуск мониторинга качества модели"
+        # Здесь будет скрипт мониторинга производительности модели
+    
+    - name: Send alerts if model performance degraded
+      if: failure()
+      run: |
+        echo "Отправка уведомлений о деградации модели"
+        # Здесь будет отправка уведомлений в Slack, email и т.д.

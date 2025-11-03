@@ -1,0 +1,1 @@
+"""Credit scoring application package."""

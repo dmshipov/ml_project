@@ -1,0 +1,142 @@
+# Pre-commit hooks для проекта кредитного скоринга
+repos:
+  # Базовые проверки
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        name: "Удаление пробелов в конце строк"
+      - id: end-of-file-fixer
+        name: "Добавление пустой строки в конце файла"
+      - id: check-yaml
+        name: "Проверка YAML файлов"
+      - id: check-json
+        name: "Проверка JSON файлов"
+      - id: check-toml
+        name: "Проверка TOML файлов"
+      - id: check-merge-conflict
+        name: "Проверка конфликтов слияния"
+      - id: check-added-large-files
+        name: "Проверка больших файлов"
+        args: ['--maxkb=1000']
+      - id: check-case-conflict
+        name: "Проверка конфликтов регистра"
+      - id: check-docstring-first
+        name: "Проверка docstring в начале файла"
+      - id: debug-statements
+        name: "Проверка отладочных операторов"
+      - id: requirements-txt-fixer
+        name: "Сортировка requirements.txt"
+
+  # Форматирование Python кода
+  - repo: https://github.com/psf/black
+    rev: 23.11.0
+    hooks:
+      - id: black
+        name: "Форматирование кода с Black"
+        language_version: python3
+        args: [--line-length=88, --target-version=py311]
+
+  # Сортировка импортов
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: "Сортировка импортов с isort"
+        args: [--profile=black, --line-length=88]
+
+  # Линтинг Python кода
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        name: "Линтинг с flake8"
+        args: [--max-line-length=88, --extend-ignore=E203,W503]
+        additional_dependencies: [flake8-docstrings]
+
+  # Проверка типов
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        name: "Проверка типов с mypy"
+        additional_dependencies: [types-requests, types-PyYAML]
+        args: [--ignore-missing-imports]
+
+  # Проверка безопасности
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        name: "Проверка безопасности с bandit"
+        args: [-r, ., -f, json, -o, bandit-report.json]
+        exclude: ^tests/
+
+  # Проверка Jupyter notebooks
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.1
+    hooks:
+      - id: nbqa-black
+        name: "Форматирование Jupyter notebooks с Black"
+      - id: nbqa-isort
+        name: "Сортировка импортов в Jupyter notebooks"
+      - id: nbqa-flake8
+        name: "Линтинг Jupyter notebooks"
+
+  # Проверка Docker файлов
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+        name: "Линтинг Dockerfile"
+        args: [--ignore, DL3008, --ignore, DL3009]
+
+  # Проверка YAML файлов
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        name: "Линтинг YAML файлов"
+        args: [-d, relaxed]
+
+  # Проверка Markdown файлов
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
+    hooks:
+      - id: markdownlint
+        name: "Линтинг Markdown файлов"
+        args: [--fix]
+
+  # Проверка секретов
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        name: "Поиск секретов в коде"
+        args: [--baseline, .secrets.baseline]
+
+# Конфигурация для всех хуков
+default_stages: [commit, push]
+fail_fast: false
+
+# Исключения
+exclude: |
+  (?x)^(
+    \.git/.*|
+    \.venv/.*|
+    venv/.*|
+    \.pytest_cache/.*|
+    __pycache__/.*|
+    \.mypy_cache/.*|
+    \.coverage.*|
+    htmlcov/.*|
+    \.tox/.*|
+    dist/.*|
+    build/.*|
+    \.eggs/.*|
+    \.DS_Store|
+    \.vscode/.*|
+    \.idea/.*|
+    bandit-report\.json|
+    \.secrets\.baseline
+  )$
