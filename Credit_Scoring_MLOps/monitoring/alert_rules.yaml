@@ -1,0 +1,42 @@
+groups:
+  - name: credit-api-alerts
+    rules:
+      # 1. Значительный процент ошибок 5xx
+      - alert: CreditApiHighErrorRate
+        expr: |
+          sum(rate(http_requests_total{status=~"5.."}[5m])) 
+            / sum(rate(http_requests_total[5m])) > 0.05
+        for: 2m
+        labels:
+          severity: warning
+          service: credit-api
+        annotations:
+          summary: "Увеличенный процент ошибок 5xx в credit-api"
+          description: "В последние 5 минут доля ответов с кодами 5xx от сервиса credit-api превысила 5%"
+
+      # 2. Повышенная латентность 95-го перцентиля
+      - alert: CreditApiHighLatencyP95
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum(rate(http_request_duration_seconds_bucket[5m])) by (le)
+          ) > 0.5
+        for: 3m
+        labels:
+          severity: warning
+          service: credit-api
+        annotations:
+          summary: "Повышенная задержка 95-го перцентиля для credit-api"
+          description: "В течение 3 минут 95-й перцентиль времени отклика превышает 0.5 секунды."
+
+      # Сервис не получает трафик (отсутствие запросов)
+      - alert: CreditApiNoTraffic
+        expr: |
+          sum(rate(http_requests_total[10m])) == 0
+        for: 10m
+        labels:
+          severity: info
+          service: credit-api
+        annotations:
+          summary: "Отсутствие трафика на credit-api"
+          description: "В последние 10 минут не зарегистрировано ни одного запроса к API. Вероятно, пользователи не обращаются к сервису или возникла проблема с перенаправлением."

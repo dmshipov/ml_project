@@ -1,0 +1,86 @@
+services:
+  credit-api:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.api
+    image: credit-scoring-api
+    container_name: credit-api
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:v2.54.0
+    container_name: prometheus
+    volumes:
+      - ./monitoring/prometheus-config.yaml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/alert_rules.yaml:/etc/prometheus/alert_rules.yaml:ro
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:11.0.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    networks:
+      - monitoring
+    volumes:
+      # data sources (Prometheus + Loki)
+      - ./monitoring/grafana-datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml:ro
+
+      # провайдер дашбордов
+      - ./monitoring/grafana-dashboards.yaml:/etc/grafana/provisioning/dashboards/credit-dashboards.yml:ro
+
+      # сам JSON с дашбордом
+      - ./monitoring/grafana-dashboard.json:/var/lib/grafana/dashboards/credit-api.json:ro
+
+  loki:
+    image: grafana/loki:2.9.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./monitoring/loki-config.yaml:/etc/loki/local-config.yaml
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    volumes:
+      - /var/log:/var/log
+      - ./monitoring/promtail-config.yaml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge

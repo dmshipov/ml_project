@@ -1,0 +1,36 @@
+# Build stage: установка зависимостей проекта
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# DVC stage: отдельный слой для работы с данными/моделями
+FROM python:3.11-slim AS dvc
+
+WORKDIR /app
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# dvc[ssh] уже есть в requirements, но здесь показываем отдельный слой под DVC
+RUN pip install --no-cache-dir dvc[ssh]
+
+COPY . .
+# В реальном проекте здесь часто делают dvc pull
+# RUN dvc pull -R
+
+# Final stage: минимальный образ с API и уже установленными зависимостями
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Библиотеки из builder-слоя (установлены с флагом --user)
+COPY --from=builder /root/.local /root/.local
+
+# Сам код приложения + всё, что нужно DVC
+COPY --from=dvc /app /app
+
+ENV PATH="/root/.local/bin:${PATH}"
+
+EXPOSE 8000
+
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Копируем весь проект, чтобы при желании можно было запускать другие скрипты
+COPY . .
+
+# По умолчанию тренируем модель на встроенном датасете
+CMD ["python", "src/scripts/train_model.py", "--data", "data/train.csv"]

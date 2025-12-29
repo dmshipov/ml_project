@@ -1,0 +1,174 @@
+{
+"annotations": {
+"list": [
+{
+"builtIn": 1,
+"datasource": "-- Grafana --",
+"enable": true,
+"hide": true,
+"iconColor": "rgba(0, 211, 255, 1)",
+"name": "Замечания и Оповещения",
+"type": "dashboard"
+}
+]
+},
+"editable": true,
+"fiscalYearStartMonth": 0,
+"graphTooltip": 0,
+"links": [],
+"panels": [
+{
+"datasource": {
+"type": "prometheus",
+"uid": "prometheus"
+},
+"fieldConfig": {
+"defaults": {
+"color": {
+"mode": "palette-classic"
+},
+"custom": {},
+"mappings": [],
+"thresholds": {
+"mode": "absolute",
+"steps": [
+{
+"color": "green",
+"value": null
+}
+]
+}
+},
+"overrides": []
+},
+"gridPos": {
+"h": 7,
+"w": 12,
+"x": 0,
+"y": 0
+},
+"id": 1,
+"options": {
+"legend": {
+"showLegend": true
+},
+"tooltip": {
+"mode": "single"
+}
+},
+"targets": [
+{
+"expr": "rate(http_requests_total[1m])",
+"legendFormat": "{{method}} {{handler}}",
+"refId": "A"
+}
+],
+"title": "📊 Число запросов в секунду",
+"type": "timeseries"
+},
+{
+  "datasource": {
+    "type": "prometheus",
+    "uid": "prometheus"
+  },
+  "fieldConfig": {
+    "defaults": {
+      "color": {"mode": "palette-classic"},
+      "custom": {},
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {"color": "green", "value": null},
+          {"color": "orange", "value": 0.5},
+          {"color": "red", "value": 1}
+        ]
+      }
+    },
+    "overrides": []
+  },
+  "gridPos": {"h": 7, "w": 12, "x": 12, "y": 0},
+  "id": 2,
+  "options": {
+    "legend": {"showLegend": false},
+    "tooltip": {"mode": "single"}
+  },
+  "targets": [
+    {
+      "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le, handler))",
+      "legendFormat": "{{handler}}",
+      "refId": "A"
+    }
+  ],
+  "title": "⏱ 95% задержка отклика API",
+  "type": "timeseries"
+},
+
+{
+  "datasource": {
+    "type": "prometheus",
+    "uid": "prometheus"
+  },
+  "gridPos": {"h": 7, "w": 12, "x": 0, "y": 7},
+  "id": 3,
+  "targets": [
+    {
+      "expr": "rate(http_requests_total{status=~\"5..\"}[1m])",
+      "legendFormat": "Ошибки 5xx",
+      "refId": "A"
+    },
+    {
+      "expr": "rate(http_requests_total{status=~\"4..\"}[1m])",
+      "legendFormat": "Ошибки 4xx",
+      "refId": "B"
+    }
+  ],
+  "title": "🚨 Сбои 4xx/5xx",
+  "type": "timeseries"
+},
+
+{
+  "datasource": {
+    "type": "prometheus",
+    "uid": "prometheus"
+  },
+  "gridPos": {"h": 7, "w": 12, "x": 12, "y": 7},
+  "id": 4,
+  "targets": [
+    {
+      "expr": "sum(rate(http_requests_total{handler=\"/predict_cached\"}[1m]))",
+      "legendFormat": "Кешированные вызовы",
+      "refId": "A"
+    }
+  ],
+  "title": "⚡ Применение кеша Redis (/predict_cached)",
+  "type": "timeseries"
+},
+
+{
+  "datasource": {
+    "type": "prometheus",
+    "uid": "prometheus"
+  },
+  "gridPos": {"h": 7, "w": 24, "x": 0, "y": 14},
+  "id": 5,
+  "targets": [
+    {
+      "expr": "sum(rate(http_requests_total{handler=\"/predict_ab\"}[1m]))",
+      "legendFormat": "Использование A/B",
+      "refId": "A"
+    }
+  ],
+  "title": "🧪 Трафик A/B (/predict_ab)",
+  "type": "timeseries"
+}
+],
+"refresh": "5s",
+"schemaVersion": 39,
+"style": "dark",
+"tags": ["кредитный скоринг", "млопс"],
+"timezone": "",
+"title": "📡 Панель Мониторинга Кредитного Скоринга",
+"uid": "credit-scoring-dashboard",
+"version": 2,
+"weekStart": ""
+}

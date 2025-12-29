@@ -1,0 +1,17 @@
+# Игнорируемые файлы по умолчанию
+/shelf/
+/workspace.xml
+
+# Запросы HTTP-клиента на основе редактора
+/httpRequests/
+
+# Игнорируемые файлы локального хранилища источников данных
+/dataSources/
+/dataSources.local.xml
+
+# Модели (ONNX, Pickle и т.д.)
+models/
+# Кэш Python
+__pycache__/
+# Файлы IntelliJ IDEA
+.idea/

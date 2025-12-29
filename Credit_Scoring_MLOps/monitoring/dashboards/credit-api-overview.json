@@ -1,0 +1,161 @@
+{
+  "id": null,
+  "uid": "credit-api-main",
+  "title": "Credit API / Overview",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "\u0412\u0441\u0435\u0433\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043a API (\u0437\u0430 5 \u043c\u0438\u043d\u0443\u0442)",
+      "id": 1,
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [
+        {
+          "expr": "sum(increase(http_server_requests_total{job=\"credit-api\"}[5m]))",
+          "legendFormat": "all",
+          "interval": "",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "\u0427\u0430\u0441\u0442\u043e\u0442\u0430 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043f\u043e endpoint",
+      "id": 2,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 6,
+        "y": 0
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 1,
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_total{job=\"credit-api\"}[1m])) by (handler)",
+          "legendFormat": "{{handler}}",
+          "interval": "",
+          "refId": "A"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      },
+      "yaxes": [
+        {
+          "format": "reqps",
+          "label": "req/s",
+          "logBase": 1
+        },
+        {
+          "format": "short",
+          "logBase": 1
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0430 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 (p50 / p90 / p99)",
+      "id": 3,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 1,
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.5, sum(rate(http_server_request_duration_seconds_bucket{job=\"credit-api\"}[1m])) by (le))",
+          "legendFormat": "p50",
+          "refId": "A"
+        },
+        {
+          "expr": "histogram_quantile(0.9, sum(rate(http_server_request_duration_seconds_bucket{job=\"credit-api\"}[1m])) by (le))",
+          "legendFormat": "p90",
+          "refId": "B"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(http_server_request_duration_seconds_bucket{job=\"credit-api\"}[1m])) by (le))",
+          "legendFormat": "p99",
+          "refId": "C"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      },
+      "yaxes": [
+        {
+          "format": "s",
+          "label": "seconds",
+          "logBase": 1
+        },
+        {
+          "format": "short",
+          "logBase": 1
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "HTTP \u043a\u043e\u0434\u044b \u043e\u0442\u0432\u0435\u0442\u043e\u0432",
+      "id": 4,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 12
+      },
+      "lines": true,
+      "fill": 1,
+      "linewidth": 1,
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_requests_total{job=\"credit-api\"}[5m])) by (status)",
+          "legendFormat": "status={{status}}",
+          "refId": "A"
+        }
+      ],
+      "xaxis": {
+        "mode": "time"
+      },
+      "yaxes": [
+        {
+          "format": "reqps",
+          "label": "req/s",
+          "logBase": 1
+        },
+        {
+          "format": "short",
+          "logBase": 1
+        }
+      ]
+    }
+  ],
+  "templating": {
+    "list": []
+  }
+}

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credit-api-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: credit-api
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: credit-api
+        version: canary
+    spec:
+      containers:
+      - name: api
+        image: registry/credit-scoring-api:new
